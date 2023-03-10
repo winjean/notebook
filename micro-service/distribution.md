@@ -27,7 +27,8 @@ Atomic原子性，Consistency一致性，Isolation隔离性，Durability持久�
 可恢复性资源保存了一份事务日志，如果资源发生故障，可以通过日志来将数据重建起来。  
 
 ##CAP理论 
-一致性Consistency，可用性Availability，分区容错性Partition tolerance，分布式系统来说，P是不能放弃的
+一致性Consistency，可用性Availability，分区容错性Partition tolerance，
+分布式系统来说，CAP只能满足其中2条,P是不能放弃的
 
 ###C（Consistency）一致性：
 分布式数据库的数据保持一致
@@ -39,3 +40,16 @@ Atomic原子性，Consistency一致性，Isolation隔离性，Durability持久�
 一个数据库所在的机器坏了，如硬盘坏了，数据丢失了，
 可以新增一台机器，然后从其他正常的机器把备份的数据同步过来.  
 
+##BASE 理论
+Basically Available（基本可用），Soft state（软状态），Eventually Consistent（最终一致性）
+
+###BA（Basically Available）基本可用：
+在分布式系统出现故障时，允许损失部分可用性（服务降级、页面降级）。
+比如系统挂了，在页面上给个提示啥的
+
+###S（Soft state）软状态：
+允许分布式系统出现中间状态。而且中间状态不影响系统的可用性。
+这里的中间状态是指不同的数据复制data replication之间的数据更新可以出现延时的最终一致性。
+
+###E（Eventually Consistent）最终一致性：
+数据复制data replications经过一段时间达到一致性。
