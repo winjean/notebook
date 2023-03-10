@@ -26,7 +26,7 @@ Atomic原子性，Consistency一致性，Isolation隔离性，Durability持久�
 保证了事务完成后所作的改动，即使是发生灾难性的失败都会被持久化。
 可恢复性资源保存了一份事务日志，如果资源发生故障，可以通过日志来将数据重建起来。  
 
-##CAP理论 
+##CAP理论 zipkin.md
 一致性Consistency，可用性Availability，分区容错性Partition tolerance，
 分布式系统来说，CAP只能满足其中2条,P是不能放弃的
 
